@@ -1,5 +1,6 @@
 package com.example.nfcgnjava232carcontroller.cars;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +11,8 @@ public class CarController {
 
     private CarService carService;
 
-    public CarController() {
-        this.carService = new CarService();
+    public CarController(CarService carService) {
+        this.carService = carService;
     }
 
     @PostMapping

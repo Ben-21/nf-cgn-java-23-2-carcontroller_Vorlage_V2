@@ -1,13 +1,18 @@
 package com.example.nfcgnjava232carcontroller.cars;
 
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class CarService {
 
     private CarRepository carRepository;
 
-    public CarService() {
-        this.carRepository = new CarRepository();
+
+
+    public CarService(CarRepository carRepository) {
+        this.carRepository = carRepository;
     }
 
     public List<Car> addCar(Car car) {
