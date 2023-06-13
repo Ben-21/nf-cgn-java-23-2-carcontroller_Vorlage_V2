@@ -13,7 +13,7 @@ public class CarRepository {
         this.cars = new ArrayList<>();
     }
 
-    public List<Car> addCar(Car car) {
+    public List<Car> addCarInRepo(Car car) {
         this.cars.add(car);
         return this.cars;
     }
