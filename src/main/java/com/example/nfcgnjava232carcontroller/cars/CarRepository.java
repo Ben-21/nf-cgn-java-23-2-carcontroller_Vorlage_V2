@@ -11,7 +11,7 @@ public class CarRepository {
         return this.cars;
     }
 
-    private List<Car> getCars() {
+    public List<Car> getCars() {
         return this.cars;
     }
 }
