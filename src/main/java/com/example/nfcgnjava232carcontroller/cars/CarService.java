@@ -6,6 +6,10 @@ public class CarService {
 
     private CarRepository carRepository;
 
+    public CarService() {
+        this.carRepository = new CarRepository();
+    }
+
     public List<Car> addCar(Car car) {
         return this.carRepository.addCar(car);
     }
