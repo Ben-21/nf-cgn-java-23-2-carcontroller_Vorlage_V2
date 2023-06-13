@@ -10,6 +10,10 @@ public class CarController {
 
     private CarService carService;
 
+    public CarController() {
+        this.carService = new CarService();
+    }
+
     @PostMapping
     public List<Car> addCar(@RequestBody Car car) {
         return this.carService.addCar(car);
