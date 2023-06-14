@@ -25,6 +25,7 @@ class CarServiceTest {
         //Then
         assertEquals(expectedCars,actual);
         verify(carRepository).addCarInRepo(any());
+        verify(carRepository).getCars();
     }
 
     @Test
