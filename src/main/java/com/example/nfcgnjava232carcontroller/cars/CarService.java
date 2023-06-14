@@ -14,13 +14,19 @@ public class CarService {
     }
 
     public List<Car> addCarInService(Car car) {
-        if(car.getBrand().equals("BMW")){
+
             this.carRepository.addCarInRepo(car);
-        }
+
         return this.carRepository.getCars();
     }
 
     public List<Car> getCars() {
         return this.carRepository.getCars();
+    }
+
+
+    public List<Car> deleteCar(Car car){
+        this.carRepository.deleteCar(car);
+        return getCars();
     }
 }

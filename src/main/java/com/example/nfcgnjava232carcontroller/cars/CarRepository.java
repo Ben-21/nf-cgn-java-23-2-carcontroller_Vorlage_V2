@@ -18,6 +18,13 @@ public class CarRepository {
         return this.cars;
     }
 
+    public List<Car> deleteCar(Car car){
+        this.cars.remove(car);
+        return this.cars;
+    }
+
+
+
     public List<Car> getCars() {
         return this.cars;
     }

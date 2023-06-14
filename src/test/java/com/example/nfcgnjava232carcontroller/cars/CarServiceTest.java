@@ -1,6 +1,7 @@
 package com.example.nfcgnjava232carcontroller.cars;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ class CarServiceTest {
 
     CarRepository carRepository = mock(CarRepository.class);
     CarService carService = new CarService(carRepository);
+
+
     @Test
     void addCar_thenReturnListWithOneCar() {
         //Given
