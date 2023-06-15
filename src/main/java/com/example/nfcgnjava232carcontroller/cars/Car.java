@@ -20,6 +20,7 @@ public class Car {
     public Car(String brand, int numberOfTires, boolean hasMot) {
         UUID uuid = UUID.randomUUID();
         this.id = uuid.toString().substring(0,4);
+
         this.brand = brand;
         this.numberOfTires = numberOfTires;
         this.hasMot = hasMot;

@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @SpringBootTest
@@ -63,7 +65,9 @@ public class CarIntegrationTest {
 
         //WHEN
         mockMvc.perform(
-                MockMvcRequestBuilders.post("/api/cars/delete").param("id", idToDelete)
+//                MockMvcRequestBuilders.post("/api/cars/delete"+"?id="+idToDelete)
+                MockMvcRequestBuilders.post("/api/cars/delete")
+                        .param("id", idToDelete)
         );
 
         //THEN
