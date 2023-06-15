@@ -30,6 +30,8 @@ public class CarController {
 
     @PostMapping("/delete")
     public List<Car> deleteCar(@RequestParam String id) {
+        return carService.deleteCar(id);
+
 
 //        for (Car car: carService.getCars()) {
 //            if(car.getId().equals(id)){
@@ -37,17 +39,7 @@ public class CarController {
 //                break;
 //            }
 //        }
-        List<Car> carsToDelete = new ArrayList<>();
-        for (Car car : carService.getCars()) {
-            if (car.getId().equals(id)) {
-                carsToDelete.add(car);
-            }
-        }
-        this.carService.getCars().removeAll(carsToDelete);
 
-
-        //this.carService.getCars().removeIf(car -> car.getId().equals(id));
-        return carService.getCars();
     }
 
 

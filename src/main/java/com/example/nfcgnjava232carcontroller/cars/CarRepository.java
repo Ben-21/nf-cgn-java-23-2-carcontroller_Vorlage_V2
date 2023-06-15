@@ -8,6 +8,7 @@ import java.util.List;
 public class CarRepository {
 
     private List<Car> cars;
+    private CarService carService;
 
     public CarRepository() {
         this.cars = new ArrayList<>();
@@ -20,6 +21,19 @@ public class CarRepository {
 
     public List<Car> deleteCar(Car car){
         this.cars.remove(car);
+        return this.cars;
+    }
+
+    public List<Car> deleteCar(String id){
+        List<Car> carsToDelete = new ArrayList<>();
+        for (Car car : this.cars) {
+            if (car.getId().equals(id)) {
+                carsToDelete.add(car);
+            }
+        }
+        this.cars.removeAll(carsToDelete);
+        //this.carService.getCars().removeIf(car -> car.getId().equals(id));
+
         return this.cars;
     }
 

@@ -26,7 +26,10 @@ public class CarService {
 
 
     public List<Car> deleteCar(Car car){
-        this.carRepository.deleteCar(car);
-        return getCars();
+        return this.carRepository.deleteCar(car);
+    }
+
+    public List<Car> deleteCar(String id){
+        return this.carRepository.deleteCar(id);
     }
 }
